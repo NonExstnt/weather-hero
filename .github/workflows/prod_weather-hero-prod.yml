@@ -1,12 +1,12 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Azure App weather-hero-qa
+name: Build and deploy Azure App weather-hero-prod
 
 on:
   pull_request:
     branches:
-      - qa
+      - main
   workflow_dispatch:
 
 jobs:
@@ -47,32 +47,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'weather-hero-qa'
+          app-name: 'weather-hero-prod'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_49808DFCF4C845A39BD164475DF82437 }}
-
-  create-pull-request:
-    runs-on: ubuntu-latest
-    needs: deploy
-    permissions:
-      contents: read
-      pull-requests: write
-    
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          fetch-depth: 0
-
-      - name: Create Pull Request
-        run: |
-          # Create pull request using GitHub CLI
-          gh pr create \
-            --title "Auto PR: Merge qa into main" \
-            --body "Automated pull request to merge qa branch changes into main branch." \
-            --head qa \
-            --base main \
-            || echo "Pull request may already exist or there are no changes to merge"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D17C6EE0B1654A74900B56EB23F5C73E }}
