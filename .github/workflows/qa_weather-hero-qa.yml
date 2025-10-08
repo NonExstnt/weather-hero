@@ -50,7 +50,7 @@ jobs:
           app-name: 'weather-hero-qa'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_49808DFCF4C845A39BD164475DF82437 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_QA }}
 
   create-pull-request:
     runs-on: ubuntu-latest
