@@ -50,4 +50,4 @@ jobs:
           app-name: 'weather-hero-prod'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D17C6EE0B1654A74900B56EB23F5C73E }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_MAIN }}

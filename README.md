@@ -16,7 +16,7 @@ A simple Node.js weather application that provides current weather information b
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
-   cd nodejs-ghactions
+   cd weather-hero
    ```
 
 2. **Install dependencies**
