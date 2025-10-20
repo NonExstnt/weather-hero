@@ -2,6 +2,11 @@
 
 A simple Node.js weather application that provides current weather information based on user location or default coordinates.
 
+## Requirements
+- Node.js (v14 or higher)
+- npm (v6 or higher)
+- OpenWeather API key (free tier available)
+
 ## Features
 
 - 🌦️ Real-time weather data from OpenWeather API
