@@ -2,6 +2,11 @@
 
 A simple Node.js weather application that provides current weather information based on user location or default coordinates.
 
+## Requirements
+- Node.js (v18 or higher)
+- npm (v10 or higher)
+- OpenWeather API key (free tier available)
+
 ## Features
 
 - 🌦️ Real-time weather data from OpenWeather API
@@ -87,4 +92,3 @@ nodejs-ghactions/
 | `PORT` | Server port | 3000 |
 | `NODE_ENV` | Environment mode | development |
 | `OPENWEATHER_API_KEY` | OpenWeather API key | (required) |
-| `CORS_ORIGIN` | Allowed CORS origins | localhost:3000 |
