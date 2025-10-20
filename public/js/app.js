@@ -134,9 +134,39 @@ function requestLocation() {
     }
 }
 
+function getCapitalWeather(cityName, lat, lon) {
+    if (window.weatherApp) {
+        window.weatherApp.showLoading(`Getting weather for ${cityName}...`);
+        window.weatherApp.getWeatherByCoords(lat, lon);
+    }
+}
+
 // Initialize app when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     window.weatherApp = new WeatherApp();
+    
+    // Add event listeners for control buttons
+    const refreshBtn = document.getElementById('refresh-btn');
+    const locationBtn = document.getElementById('location-btn');
+    
+    if (refreshBtn) {
+        refreshBtn.addEventListener('click', refreshWeather);
+    }
+    
+    if (locationBtn) {
+        locationBtn.addEventListener('click', requestLocation);
+    }
+    
+    // Add event listeners for all capital city buttons
+    const cityButtons = document.querySelectorAll('.city-btn');
+    cityButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const cityName = button.getAttribute('data-city');
+            const lat = parseFloat(button.getAttribute('data-lat'));
+            const lon = parseFloat(button.getAttribute('data-lon'));
+            getCapitalWeather(cityName, lat, lon);
+        });
+    });
 });
 
 // Handle page visibility changes
