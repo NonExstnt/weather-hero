@@ -88,4 +88,6 @@ process.on('SIGINT', () => {
   });
 });
 
+// Export app and server for testing
 module.exports = app;
+module.exports.server = server;

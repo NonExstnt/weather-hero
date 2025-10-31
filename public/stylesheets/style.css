@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+    background: linear-gradient(135deg, #d000ff 0%, #fd7eff 100%);
     min-height: 100vh;
     color: #333;
     line-height: 1.6;
@@ -203,6 +203,51 @@ main {
     transform: translateY(-2px);
 }
 
+.capital-cities {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.capital-cities h3 {
+    color: white;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.cities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.city-btn {
+    background: rgba(255, 255, 255, 0.9);
+    color: #2d3436;
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.city-btn:hover {
+    background: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.city-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
 footer {
     text-align: center;
     margin-top: 2rem;
@@ -244,6 +289,10 @@ footer a:hover {
     .weather-details {
         grid-template-columns: repeat(2, 1fr);
     }
+    
+    .cities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 480px) {
@@ -259,5 +308,13 @@ footer a:hover {
     .location-controls button {
         width: 100%;
         max-width: 200px;
+    }
+    
+    .cities-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .capital-cities {
+        padding: 1.5rem;
     }
 }
